@@ -1,0 +1,2 @@
+class Aplauso < ApplicationRecord
+end

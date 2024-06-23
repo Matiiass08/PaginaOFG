@@ -1,0 +1,11 @@
+<h1>Dinámicas</h1>
+<ul>
+  <% @dinamicas.each do |dinamica| %>
+    <li>
+      <%= link_to dinamica.nombre, dinamica_path(dinamica), class: "btn-dinamicas" %>
+    </li>
+  <% end %>
+</ul>
+<div class="btn-back-container">
+  <%= link_to 'Volver', root_path, class: "btn-back" %>
+</div>

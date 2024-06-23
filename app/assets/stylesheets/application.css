@@ -1,0 +1,152 @@
+/* app/assets/stylesheets/application.css */
+*= require_tree .
+*= require_self
+*/
+
+/* Botones generales */
+.btn-dinamicas {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+.btn, .btn-item {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #000000;
+    border: 2px solid #000; /* Agrega un borde para que se vea como un botón */
+    border-radius: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s, border-color 0.3s; /* Agrega la transición para efecto al pasar el mouse */
+  }
+  
+  .btn-item:hover {
+    background-color: #f802f8; /* Cambia el color de fondo al pasar el mouse */
+    border-color: #ff00ea; /* Cambia el color del borde al pasar el mouse */
+  }
+  
+  .btn-dinamicas {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4b0386; /* Verde */
+    border: 2px solid #4b0386; /* Borde igual al color de fondo para efecto de botón sólido */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Transiciones suaves */
+  }
+  
+
+  .btn-item:active {
+    background-color: #666; /* Cambia el color de fondo al hacer clic */
+    border-color: #666; /* Cambia el color del borde al hacer clic */
+  }
+
+.btn-back {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+
+/* Ajustes de diseño */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #ff6a00, #ee0979, #2193b0, #6dd5ed, #cc2b5e, #753a88);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 48px;
+  color: #0a0000;
+}
+
+.menu {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.menu .btn {
+  display: inline-block;
+  margin: 20px;
+  padding: 40px 80px;
+  font-size: 32px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.menu .btn:hover {
+  background-color: #333;
+}
+
+.btn-back-container {
+  text-align: left;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

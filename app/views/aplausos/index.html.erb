@@ -1,0 +1,13 @@
+<h1>Aplausos</h1>
+<ul>
+  <% @aplausos.each do |aplauso| %>
+    <div class="menu">
+      <li>
+        <%= link_to aplauso.nombre, aplauso_path(aplauso), class: "btn-dinamicas" %>
+      </li>
+    <div>
+  <% end %>
+</ul>
+<div class="btn-back-container">
+  <%= link_to 'Volver', root_path, class: "btn-back" %>
+</div>
