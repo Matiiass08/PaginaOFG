@@ -1,5 +1,5 @@
 class AplausosController < ApplicationController
-  before_action :set_aplauso, only: %i[ show edit update destroy ]
+  before_action :set_aplauso, only: %i[ show upload_image ]
 
   # GET /aplausos or /aplausos.json
   def index
@@ -14,6 +14,14 @@ class AplausosController < ApplicationController
   # GET /aplausos/new
   def new
     @aplauso = Aplauso.new
+  end
+  
+  def upload_image
+    if @aplauso.update(aplauso_params)
+      redirect_to @aplauso, notice: 'Imagen subida correctamente.'
+    else
+      redirect_to @aplauso, alert: 'Hubo un error al subir la imagen.'
+    end
   end
 
   # GET /aplausos/1/edit

@@ -1,6 +1,5 @@
 class DinamicasController < ApplicationController
-  before_action :set_dinamica, only: %i[ show edit update destroy ]
-
+  before_action :set_dinamica, only: %i[ show upload_image ]
   # GET /dinamicas or /dinamicas.json
   def index
     @dinamicas = Dinamica.all
@@ -18,6 +17,14 @@ class DinamicasController < ApplicationController
 
   # GET /dinamicas/1/edit
   def edit
+  end
+
+  def upload_image
+    if @dinamica.update(dinamica_params)
+      redirect_to @dinamica, notice: 'Imagen subida correctamente.'
+    else
+      redirect_to @dinamica, alert: 'Hubo un error al subir la imagen.'
+    end
   end
 
   # POST /dinamicas or /dinamicas.json

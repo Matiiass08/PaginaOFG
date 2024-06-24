@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    position: relative;
   }
 
   .content {
@@ -19,11 +20,37 @@
     font-size: 36px;
     margin-bottom: 20px;
   }
+
+  .btn-upload {
+    position: absolute;
+    top: 10px; /* Reduce el margen superior */
+    right: 10px; /* Reduce el margen derecho */
+    background-color: #4b0082; /* Color morado oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .btn-upload input[type="file"] {
+    display: none;
+  }
+
+  .btn-back-container {
+    margin-top: 20px;
+  }
 </style>
 
 <h1><%= @juego.nombre %></h1>
 
 <div class="container">
+  <form action="<%= upload_image_juego_path(@juego) %>" method="post" enctype="multipart/form-data" class="btn-upload">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <label for="file-upload" class="btn-upload-label">Agregar Foto</label>
+    <input type="file" name="juego[image]" id="file-upload" onchange="this.form.submit()">
+  </form>
+
   <div class="content">
     <p><%= @juego.descripcion %></p>
 
