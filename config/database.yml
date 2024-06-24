@@ -17,23 +17,19 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV["DB_USER"]%>
-  #password: <%= ENV["DB_PASSWORD"]%>
-
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: capsula_development
-  #url: postgres://db_proyectogrupo35:kDKYc0HD9TPSfcawdx4llW2YCHDkngU3@dpg-coik4pn79t8c738ie2bg-a.oregon-postgres.render.com/db_proyectogrupo35
+  database: PaginaOFG_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: capsula
+  #username: PaginaOFG
 
   # The password associated with the postgres role (username).
   #password:
@@ -61,8 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: capsula_test
-  #url: postgres://db_proyectogrupo35:kDKYc0HD9TPSfcawdx4llW2YCHDkngU3@dpg-coik4pn79t8c738ie2bg-a.oregon-postgres.render.com/db_proyectogrupo35
+  database: PaginaOFG_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -86,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"]%>
-  #url: postgres://db_proyectogrupo35:kDKYc0HD9TPSfcawdx4llW2YCHDkngU3@dpg-coik4pn79t8c738ie2bg-a.oregon-postgres.render.com/db_proyectogrupo35
-
+  database: PaginaOFG_production
+  username: PaginaOFG
+  password: <%= ENV["PAGINAOFG_DATABASE_PASSWORD"] %>
