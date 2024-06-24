@@ -1,27 +1,33 @@
-<%= form_with(model: dinamica) do |form| %>
+<%= form_with(model: dinamica, local: true) do |form| %>
   <% if dinamica.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation">
       <h2><%= pluralize(dinamica.errors.count, "error") %> prohibited this dinamica from being saved:</h2>
 
       <ul>
-        <% dinamica.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% dinamica.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :nombre, style: "display: block" %>
+  <div class="field">
+    <%= form.label :nombre %>
     <%= form.text_field :nombre %>
   </div>
 
-  <div>
-    <%= form.label :descripcion, style: "display: block" %>
+  <div class="field">
+    <%= form.label :descripcion %>
     <%= form.text_area :descripcion %>
   </div>
 
-  <div>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+

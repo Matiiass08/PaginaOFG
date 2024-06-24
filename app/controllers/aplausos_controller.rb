@@ -66,6 +66,6 @@ class AplausosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aplauso_params
-      params.require(:aplauso).permit(:nombre, :descripcion)
+      params.require(:aplauso).permit(:nombre, :descripcion, :image)
     end
 end

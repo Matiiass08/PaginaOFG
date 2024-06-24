@@ -66,6 +66,6 @@ class DinamicasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dinamica_params
-      params.require(:dinamica).permit(:nombre, :descripcion)
+      params.require(:dinamica).permit(:nombre, :descripcion, :image)
     end
 end

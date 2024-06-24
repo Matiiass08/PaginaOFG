@@ -1,5 +1,40 @@
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .content {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    max-width: 80%;
+  }
+
+  h1 {
+    text-align: center;
+    color: black;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+</style>
+
 <h1><%= @dinamica.nombre %></h1>
-<p><%= @dinamica.descripcion %></p>
-<div class="btn-back-container">
-  <%= link_to 'Volver', dinamicas_path, class: "btn-back" %>
+
+<div class="container">
+  <div class="content">
+    <p><%= @dinamica.descripcion %></p>
+
+    <% if @dinamica.image.present? %>
+      <div>
+        <%= image_tag @dinamica.image.url %>
+      </div>
+    <% end %>
+
+    <div class="btn-back-container">
+      <%= link_to 'Volver', dinamicas_path, class: "btn-back" %>
+    </div>
+  </div>
 </div>
