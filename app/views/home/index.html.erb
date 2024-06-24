@@ -3,10 +3,57 @@
   <div class="menu">
     <%= link_to 'Juegos', juegos_path, class: "btn" %>
     <%= link_to 'Dinámicas', dinamicas_path, class: "btn" %>
-    <%= link_to 'Aplausos', aplausos_path, class: "btn" %>
+    <div class="sub-menu">
+      <%= link_to 'Reflexiones', reflexion_path, class: "btn-small" %>
+    </div>
+
+    <div class="sub-menu">
+      <%= link_to 'Aplausos', aplausos_path, class: "btn" %>
+    </div>
   </div>
 </div>
 
 <footer>
   Creado por: Matías Retamales, Macarena Ríos, Mayeli Santander, Leandro Valdes | Profesor: Cristian Rojas
 </footer>
+
+<style>
+  .main-content {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .menu {
+    margin-top: 20px;
+  }
+
+  .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4b0082; /* Morado oscuro */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .sub-menu {
+    margin-top: 5px;
+  }
+
+  .btn-small {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #4b0082; /* Morado oscuro */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  footer {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+</style>

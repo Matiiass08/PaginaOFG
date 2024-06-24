@@ -1,0 +1,38 @@
+<h1>Reflexiones</h1>
+<div class="main-content">
+  <%= link_to 'Reflexión 1', reflexion_1_path, class: "btn-reflection" %>
+  <%= link_to 'Reflexión 2', reflexion_2_path, class: "btn-reflection" %>
+  <%= link_to 'Reflexión 3', reflexion_3_path, class: "btn-reflection" %>
+  <%= link_to 'Reflexión 4', reflexion_4_path, class: "btn-reflection" %>
+
+  <%= link_to 'Volver', root_path, class: "btn-back" %>
+</div>
+
+<style>
+  .btn-reflection {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #4b0082; /* Morado oscuro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .btn-reflection:hover {
+    background-color: #6a0dad; /* Cambio de color al pasar el mouse */
+  }
+
+  .btn-back {
+    margin-top: 20px;
+    background-color: #4b0082; /* Morado oscuro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+</style>
